@@ -71,7 +71,7 @@ namespace Calculator.Test.Unit
         [TestCase(1, -10, 1)]
         [TestCase(10, 0, 1)]
         [TestCase(4, 0.5, 2.0)]
-		[TestCase(9, 0.5, 3.0)]
+        [TestCase(9, 0.5, 3.0)]
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
@@ -88,5 +88,11 @@ namespace Calculator.Test.Unit
             Assert.That(result, Is.EqualTo(0.707107).Within(0.0000005));
         }
 
+        [TestCase(9, 3)]
+        [TestCase(25, 5)]
+        public void Sqrt_SqrtOf(double a, double result)
+        {
+            Assert.That(_uut.Sqrt(a),Is.EqualTo(result));
+        }
     }
 }
