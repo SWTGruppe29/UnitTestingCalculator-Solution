@@ -104,11 +104,42 @@ namespace Calculator.Test.Unit
             Assert.That(result, Is.EqualTo(expectedResult));
         }
 
+        [Test]
         public void Divide_DivideByZero_WritesToConsole()
         {
             double result = _uut.Divide(5, 0);
             Assert.That(0,Is.EqualTo(result));
         }
 
+        [TestCase(10,3628800)]
+        [TestCase(5,120)]
+        public void Factorial_FactorialOfNumber_ReturnResult(double a, double result)
+        {
+            Assert.That(_uut.Factorial(a),Is.EqualTo(result));
+        }
+
+        [Test]
+        public void Factorial_FactorialOfZero_ReturnOne()
+        {
+            var result = _uut.Factorial(0);
+
+            Assert.That(result,Is.EqualTo(1));
+        }
+
+        [TestCase(10, 2, 0)]
+        [TestCase(10, 3, 1)]
+        [TestCase(176, 155, 21)]
+        public void Modulus_ModulusOfDividend_ofDivisor_ReturnResult(double dividend, double divisor, double result)
+        {
+            Assert.That(_uut.Modulus(dividend,divisor),Is.EqualTo(result));
+        }
+
+        [Test]
+        public void Modulus_DivideByZero_ReturnZero()
+        {
+            var result = _uut.Modulus(10, 0);
+            Assert.That(result,Is.EqualTo(0));
+        }
+        
     }
 }
