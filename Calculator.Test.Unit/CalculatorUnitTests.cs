@@ -88,5 +88,21 @@ namespace Calculator.Test.Unit
             Assert.That(result, Is.EqualTo(0.707107).Within(0.0000005));
         }
 
+        [TestCase(4,2,2)]
+        [TestCase(10,5,2)]
+        [TestCase(20,2,10)]
+        [TestCase(10,4,2.5)]
+        public void Divide_DividePositiveNumbers_ResultIsCorrect(double dividend, double divisor, double expectedResult)
+        {
+            double result = _uut.Divide(dividend, divisor);
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        public void Divide_DivideByZero_WritesToConsole()
+        {
+            double result = _uut.Divide(5, 0);
+            Assert.That(0,Is.EqualTo(result));
+        }
+
     }
 }
