@@ -64,14 +64,6 @@ namespace Calculator.Test.Unit
         }
 
 
-        [TestCase(2, 3, 8)]
-        [TestCase(2, -3, 0.125)]
-        [TestCase(-2, -3, -0.125)]
-        [TestCase(1, 10, 1)]
-        [TestCase(1, -10, 1)]
-        [TestCase(10, 0, 1)]
-        [TestCase(4, 0.5, 2.0)]
-        [TestCase(9, 0.5, 3.0)]
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
