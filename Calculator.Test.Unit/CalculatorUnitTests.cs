@@ -66,7 +66,7 @@ namespace Calculator.Test.Unit
 
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
-            Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
+            Assert.That(_uut.Power(x, exp), Is.EqualTo(result)); //test
         }
 
         // For floating point results, exact equal comparison can be tricky
